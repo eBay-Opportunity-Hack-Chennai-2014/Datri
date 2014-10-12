@@ -1,0 +1,59 @@
+import java.io.*;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class Coordinates {
+	public static void main(String[] args) throws Exception {
+		FileWriter file = new FileWriter("C:\\hackathon\\location_coordinates.js",true);
+		BufferedReader br = new BufferedReader(new FileReader("C:\\hackathon\\data.csv"));
+		String record = null;
+		StringBuilder address = new StringBuilder();
+		int noOfDonors = 0;
+		GeoLocation geoObject = new GeoLocation();
+		while((record = br.readLine()) != null) {
+			String [] recordSplit = record.split(",");
+			int length = recordSplit.length;
+			length = length - 4;
+			address = new StringBuilder();
+			for(int i=0; i<length; i++) {
+				address.append(recordSplit[i]);
+				address.append(",");
+			}
+			noOfDonors = Integer.parseInt(recordSplit[recordSplit.length-1]);
+			String add = address.toString();
+			String addres = add.replaceAll("[^a-zA-Z0-9,]","");
+			
+			//System.out.println("time before api call"+System.currentTimeMillis());
+			try 
+			{
+			geoObject.jsonLocationFileCreate(addres,noOfDonors);
+			}
+			catch(Exception e) {
+				System.out.println(e);
+			}
+			//System.out.println("time after api call"+System.currentTimeMillis());
+			//System.out.println(geoObject.locationList.toString());
+		}	
+		 try {
+			 JSONObject obj = new JSONObject();
+			 JSONArray testArray = new JSONArray();
+			 for(int i=0; i<geoObject.testResponse.size(); i++) {
+				 obj = new JSONObject(geoObject.testResponse.get(i));
+//				 System.out.println(obj+"***************************");
+				 System.out.println(obj.getJSONArray("results").getJSONObject(0).getJSONObject("geometry").getJSONObject("location"));
+			 }
+			 	file.write("var data = ");
+	            file.write(geoObject.locationList.toString());
+//	            System.out.println("Successfully Copied JSON Object to File...");
+	 
+        } catch (IOException e) {
+            e.printStackTrace();
+ 
+        } finally {
+            file.flush();
+            file.close();
+        }
+	}
+
+}
