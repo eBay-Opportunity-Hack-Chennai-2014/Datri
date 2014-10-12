@@ -1,0 +1,77 @@
+.modal.brick .modal-header{
+	background: rgba(0, 0, 0, 0.0980392);
+	border-bottom: none;
+}
+.modal.brick .modal-content {
+	background: rgb(231, 76, 60);
+}
+.modal.brick .modal-footer {
+	border-top:none;
+}
+
+.modal.brick button {
+	display: block;
+	margin: 0px auto;
+	font-size: 0.8em;
+}
+.modal.brick button:hover {
+	background: rgb(165, 40, 27);
+}
+.modal.brick button {
+	border: none;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+	padding: 0.6em 1.2em;
+	background: rgb(192, 57, 43);
+	color: rgb(255, 255, 255);
+	font-family: Lato, Calibri, Arial, sans-serif;
+	font-size: 1em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	margin: 3px 2px;
+	border-radius: 2px;
+}
+/*.modal-vertical-centered {
+  transform: translate(0, 50%) !important;
+  -ms-transform: translate(0, 50%) !important; 
+  -webkit-transform: translate(0, 50%) !important; 
+}*/
+
+.modal.vertical-center .modal-dialog {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.modal.vertical-center .modal-body {
+    overflow-y: auto;
+}
+.modal.vertical-center .modal-footer {
+    margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .modal.vertical-center .modal-dialog {
+    width: 100%;
+  }
+}
+
+.modal.brick input {
+	border-radius: 1px;
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #c0c0c0;
+	padding: 1px 8px;
+	opacity: .84;
+}
+.modal.brick textarea {
+	border-radius: 1px;
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #c0c0c0;
+	opacity: .84;
+}
