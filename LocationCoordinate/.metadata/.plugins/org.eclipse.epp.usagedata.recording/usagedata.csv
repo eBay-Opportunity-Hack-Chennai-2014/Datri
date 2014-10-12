@@ -1,0 +1,8 @@
+what,kind,bundleId,bundleVersion,description,time
+startIde,ide,Unknown,,"[IDE] PPDE-1.1.0",1413059115445
+started,bundle,com.ebay.tools.dede,1.12.0.201111091744,"com.ebay.tools.dede",1413059115457
+started,bundle,com.ebay.tools.dede.ui,1.12.0.201111091744,"com.ebay.tools.dede.ui",1413059115457
+started,bundle,com.ebay.uede.adoptiontracking,1.3.1.R201212121345,"com.ebay.uede.adoptiontracking",1413059115458
+stopped,bundle,com.ebay.dede.dsimport.plugin,1.0.4,"com.ebay.dede.dsimport.plugin",1413061384480
+stopped,bundle,com.ebay.tools.dede.ui,1.12.0.201111091744,"com.ebay.tools.dede.ui",1413061384480
+stopped,bundle,com.ebay.tools.dede,1.12.0.201111091744,"com.ebay.tools.dede",1413061384483
