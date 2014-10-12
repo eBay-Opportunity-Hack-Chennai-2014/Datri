@@ -1,0 +1,31 @@
+import java.io.*;
+
+public class Coordinates {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new FileReader("C:\\hackathon\\data.csv"));
+		String record = null;
+		StringBuilder address = new StringBuilder();
+		int noOfDonors = 0;
+		GeoLocation geoObject = new GeoLocation();
+		while((record = br.readLine()) != null) {
+			String [] recordSplit = record.split(",");
+			int length = recordSplit.length;
+			length = length - 4;
+			for(int i=0; i<length; i++) {
+				address.append(recordSplit[i]);
+				address.append(",");
+			}
+			noOfDonors = Integer.parseInt(recordSplit[recordSplit.length-1]);
+			String add = address.toString();
+			add.replaceAll(" ", "%20");
+			System.out.println("add"+add);
+			geoObject.jsonLocationFileCreate(add,noOfDonors);
+//			System.out.println(address +"+"+noOfDonors);
+			System.out.println(geoObject.locationList.toString());
+		}
+		
+//		geoObject.jsonLocationFileCreate("India,Andhra Pradesh,Khammam,,",3);
+		
+	}
+
+}
